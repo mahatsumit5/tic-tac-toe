@@ -1,113 +1,294 @@
-import Image from 'next/image'
-
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+"use client";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+interface ShapeState {
+  [key: string]: string;
+  b1: "circle" | "cross";
+  b2: "circle" | "cross";
+  b3: "circle" | "cross";
+  b4: "circle" | "cross";
+  b5: "circle" | "cross";
+  b6: "circle" | "cross";
+  b7: "circle" | "cross";
+  b8: "circle" | "cross";
+  b9: "circle" | "cross";
 }
+type ComponentKeys = "player1" | "player2";
+type shapeKeys = "circle" | "cross";
+export default function Home() {
+  const [player1, setPlayer1] = useState<string>("");
+  const [player2, setPlayer2] = useState<string>("");
+  const [currentPlayer, setCurrentPlayer] = useState<string>("Player 1");
+  const [currentInputField, setCurrentInputField] = useState<
+    "player1" | "player2"
+  >("player1");
+  const [currentShape, setCurrentShape] = useState<string>("circle");
+  const [winner, setWinner] = useState<string>("");
+  // TODO: type this properly
+  const Components: Record<ComponentKeys, JSX.Element> = {
+    player1: (
+      <InputFieldForPlayer1
+        setPlayer1={setPlayer1}
+        setCurrentInputField={setCurrentInputField}
+      />
+    ),
+    player2: (
+      <InputFieldForPlayer2
+        setPlayer2={setPlayer2}
+        setCurrentInputField={setCurrentInputField}
+      />
+    ),
+  };
+  const initalEmptyShape = {
+    b1: "",
+    b2: "",
+    b3: "",
+    b4: "",
+    b5: "",
+    b6: "",
+    b7: "",
+    b8: "",
+    b9: "",
+  };
+  const [shapedFilledInbox, setShapeFilledInBox] = useState<ShapeState>(
+    initalEmptyShape as ShapeState
+  );
+  const shape: Record<shapeKeys, JSX.Element> = {
+    circle: <Circle />,
+    cross: <Cross />,
+  };
+  function handleDrawShape(boxNumber: string) {
+    if (!player1 || !player2) {
+      window.alert("Enter player name first!");
+      return;
+    }
+    if (shapedFilledInbox[boxNumber] || winner.length) {
+      console.log("Stopping from drwaing");
+      return;
+      // stop executing drawing shape where already exist
+    }
+    if (currentPlayer === "Player 1") {
+      setCurrentPlayer("Player 2");
+      setCurrentShape("circle");
+      setShapeFilledInBox({ ...shapedFilledInbox, [`${boxNumber}`]: "circle" });
+    } else {
+      setCurrentPlayer("Player 1");
+      setCurrentShape("cross");
+      setShapeFilledInBox({ ...shapedFilledInbox, [`${boxNumber}`]: "cross" });
+    }
+  }
+
+  useEffect(() => {
+    if (
+      (shapedFilledInbox.b1 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b2 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b3) ||
+      (shapedFilledInbox.b1 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b4 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b7) ||
+      (shapedFilledInbox.b1 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b5 &&
+        shapedFilledInbox.b1 === shapedFilledInbox.b9) ||
+      (shapedFilledInbox.b2 &&
+        shapedFilledInbox.b2 === shapedFilledInbox.b5 &&
+        shapedFilledInbox.b2 === shapedFilledInbox.b8) ||
+      (shapedFilledInbox.b3 &&
+        shapedFilledInbox.b3 === shapedFilledInbox.b6 &&
+        shapedFilledInbox.b3 === shapedFilledInbox.b9) ||
+      (shapedFilledInbox.b4 &&
+        shapedFilledInbox.b4 === shapedFilledInbox.b5 &&
+        shapedFilledInbox.b4 === shapedFilledInbox.b6) ||
+      (shapedFilledInbox.b7 &&
+        shapedFilledInbox.b7 === shapedFilledInbox.b8 &&
+        shapedFilledInbox.b7 === shapedFilledInbox.b9) ||
+      (shapedFilledInbox.b7 &&
+        shapedFilledInbox.b7 === shapedFilledInbox.b5 &&
+        shapedFilledInbox.b7 === shapedFilledInbox.b3)
+    ) {
+      console.log("Game over");
+      if (currentPlayer === "Player 1") {
+        setWinner(player2);
+      } else {
+        setWinner(player1);
+      }
+    }
+  }, [shapedFilledInbox, currentPlayer, player1, player2]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShapeFilledInBox(initalEmptyShape as ShapeState);
+    }, 2000);
+  }, [winner]);
+  return (
+    <main className="flex h-screen flex-col items-center justify-start mt-7 gap-6 p-2 mx-auto w-full sm:max-w-xl">
+      <h1 className="text-5xl font-bold">Tic Tac Toe</h1>
+      <p>Current Player:{currentPlayer}</p>
+      {Components[currentInputField]}
+      {player1 && (
+        <h1 className="text-3xl font-bold">
+          {player1} V.S {player2}
+        </h1>
+      )}
+      <div className=" p-2 w-full sm:w-[450px] sm:h-[49vh] rounded-md grid grid-cols-3 bg-slate-700">
+        <span
+          className=" relative text-center p-5 border-b border-r h-32 "
+          onClick={() => {
+            handleDrawShape("b1");
+          }}
+          id="box1"
+        >
+          {shapedFilledInbox.b1 && shape[shapedFilledInbox.b1]}
+        </span>
+        <span
+          className=" relative text-center p-5 border-b border-r h-32"
+          onClick={() => {
+            handleDrawShape("b2");
+          }}
+          id="box2"
+        >
+          {shapedFilledInbox.b2 && shape[shapedFilledInbox.b2]}
+        </span>
+        <span
+          className=" relative text-center p-5 border-b  h-32"
+          onClick={() => {
+            handleDrawShape("b3");
+          }}
+          id="box3"
+        >
+          {" "}
+          {shapedFilledInbox.b3 && shape[shapedFilledInbox.b3]}
+        </span>
+        <span
+          className=" relative text-center p-5 border-b border-r h-32"
+          onClick={() => {
+            handleDrawShape("b4");
+          }}
+          id="box4"
+        >
+          {" "}
+          {shapedFilledInbox.b4 && shape[shapedFilledInbox.b4]}
+        </span>
+        <span
+          className=" relative text-center p-5 border-b border-r h-32"
+          onClick={() => {
+            handleDrawShape("b5");
+          }}
+          id="box5"
+        >
+          {" "}
+          {shapedFilledInbox.b5 && shape[shapedFilledInbox.b5]}
+        </span>
+        <span
+          className=" relative text-center p-5 border-b h-32"
+          onClick={() => {
+            handleDrawShape("b6");
+          }}
+          id="box6"
+        >
+          {" "}
+          {shapedFilledInbox.b6 && shape[shapedFilledInbox.b6]}
+        </span>
+
+        <span
+          className=" relative text-center p-5  border-r h-32"
+          onClick={() => {
+            handleDrawShape("b7");
+          }}
+          id="box7"
+        >
+          {" "}
+          {shapedFilledInbox.b7 && shape[shapedFilledInbox.b7]}
+        </span>
+        <span
+          className=" relative text-center p-5  border-r h-32"
+          onClick={() => {
+            handleDrawShape("b8");
+          }}
+          id="box8"
+        >
+          {" "}
+          {shapedFilledInbox.b8 && shape[shapedFilledInbox.b8]}
+        </span>
+        <span
+          className=" relative text-center p-5   h-32"
+          onClick={() => {
+            handleDrawShape("b9");
+          }}
+          id="box9"
+        >
+          {" "}
+          {shapedFilledInbox.b9 && shape[shapedFilledInbox.b9]}
+        </span>
+      </div>
+      {winner && <p>{winner} wins</p>}
+      {winner && (
+        <button
+          className="w-full sm:w-[450px] p-3 bg-green-800 rounded-md"
+          onClick={() => {
+            setWinner("");
+          }}
+        >
+          Play Again
+        </button>
+      )}
+    </main>
+  );
+}
+
+const InputFieldForPlayer1 = ({
+  setPlayer1,
+  setCurrentInputField,
+}: {
+  setPlayer1: Dispatch<SetStateAction<string>>;
+  setCurrentInputField: Dispatch<SetStateAction<"player1" | "player2">>;
+}) => {
+  const input1Ref = useRef<HTMLInputElement>(null);
+  const handleSave = () => {
+    if (input1Ref.current && typeof input1Ref.current.value === "string") {
+      setPlayer1(input1Ref.current.value);
+      setCurrentInputField("player2");
+    }
+  };
+  return (
+    <form action={handleSave} className="w-full">
+      <input
+        className="w-full p-4 bg-slate-700 rounded-md"
+        placeholder="Enter player 1 name"
+        ref={input1Ref}
+      />
+      <button type="submit"></button>
+    </form>
+  );
+};
+const InputFieldForPlayer2 = ({
+  setPlayer2,
+  setCurrentInputField,
+}: {
+  setPlayer2: Dispatch<SetStateAction<string>>;
+  setCurrentInputField: Dispatch<SetStateAction<"player1" | "player2">>;
+}) => {
+  const input2Ref = useRef<HTMLInputElement>(null);
+  const handleSave = () => {
+    if (input2Ref.current && typeof input2Ref.current.value === "string") {
+      setPlayer2(input2Ref.current.value);
+      setCurrentInputField("player1");
+    }
+  };
+  return (
+    <form action={handleSave} className="w-full">
+      <input
+        className="w-full p-4 bg-slate-700 rounded-md"
+        placeholder="Enter player 2"
+        ref={input2Ref}
+      />
+      <button type="submit"></button>
+    </form>
+  );
+};
+
+const Circle = () => {
+  return <div className="border-2 h-full rounded-full" />;
+};
+
+const Cross = () => {
+  return <p className="text-7xl font-sans font-light">X</p>;
+};
